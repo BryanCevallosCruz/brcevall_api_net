@@ -1,10 +1,13 @@
-﻿
+﻿using Microsoft.Azure.Management.ResourceManager.Fluent.Core;
 using Root;
 namespace interfaz;
 
 
-public class PersonaAppService
+public class PersonaAppService : IPersonaAppService
 {
+    public PersonaAppService()
+    {
+    }
 
     public List<Persona> GetNameId()
     {
@@ -12,16 +15,10 @@ public class PersonaAppService
         client.Timeout = -1;
         var request = new RestRequest(Method.GET);
         IRestResponse response = client.Execute(request);
+        
 
-
+        return 
         //Console.WriteLine(response.Content);
     }
 
-}
-
-
-public interface IPersona
-{
-    Task<Persona> GetNameId();
-    
 }

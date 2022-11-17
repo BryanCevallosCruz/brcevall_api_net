@@ -4,6 +4,10 @@
     <ProjectReference Include="..\Root\Root.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.Management.ResourceManager.Fluent" Version="1.38.1" />
+  </ItemGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>

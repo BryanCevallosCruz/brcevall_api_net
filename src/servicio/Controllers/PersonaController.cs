@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Root;
+using interfaz;
 
 namespace servicio.Controllers;
 
@@ -7,10 +8,16 @@ namespace servicio.Controllers;
 [Route("[controller]")]
 public class PersonaController : ControllerBase
 {
+        private readonly IPersonaAppService personaAppService;
+    public PersonaController(IPersonaAppService personaAppService)
+    {
+        this.personaAppService = personaAppService;
+    }
+
     [HttpGet]
     public List<Persona> GetNameId()
     {
-        
+        return personaAppService.GetNameId();
     }
 
   
